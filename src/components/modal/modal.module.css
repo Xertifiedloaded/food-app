@@ -1,0 +1,136 @@
+.modalContainer {
+    width: 50rem;
+    left: calc(50% - 20rem);
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+    color: black;
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    overflow: scroll;
+}
+
+.main {
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    height: 700px;
+    top: 100px;
+    left: 20%;
+    right: 0;
+    bottom: 0;
+    overflow: scroll;
+}
+
+.items {
+    box-sizing: border-box;
+    padding: 20px 0;
+    display: flex;
+    border-bottom: 2px solid #8a2b06;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.items .content>.name {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.price {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.price>p:first-child {
+    font-weight: 700;
+    color: #8a2b06;
+}
+
+.price>p:last-child {
+    font-weight: 700;
+    border: 1px solid #ccc;
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    color: #363636;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.items .qty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.totalAmt {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.btnContainer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: end;
+}
+
+.btnContainer>button {
+    cursor: pointer;
+    background-color: initial;
+    border: 1px solid #8a2b06;
+    padding:10px 30px;
+    border-radius: 20px;
+    margin-left: 1rem;
+    font-size: 17px;
+    transition: 1s;
+    text-transform: capitalize;
+}
+.btnContainer>button:last-child{
+    background: #8a2b06;
+    color: white;
+}
+.btnContainer>button:hover:first-child{
+    background: #8a2b06;
+    color: white;
+}
+.items .qty>button {
+    width: 3rem;
+    text-align: center;
+    border-radius: 6px;
+    font-size: 20px;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #8a2b06;
+    padding: 4px 0;
+    background: transparent;
+    border: 1px solid #8a2b06;
+}
+
+.modalContainer .amount {
+    text-transform: capitalize;
+}
+
+.modalContainer .amount .totalPrice {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.totalPrice:last-child {
+
+    border-bottom: 3px solid #8a2b06;
+}
+
+.totalPrice {
+    padding: 5px 0;
+
+}
+
+.totalPrice>.total {
+    font-weight: 700;
+    font-size: 1.5rem;
+}

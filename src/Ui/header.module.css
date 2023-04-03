@@ -1,0 +1,60 @@
+header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    background: var(--header);
+    z-index: 5;
+}
+
+.main {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.main .logo>h2 {
+    color: white;
+    text-transform: capitalize;
+}
+
+nav button {
+    width: 60%;
+    color: white;
+    border-radius: 20px;
+    padding: 13px 30px;
+    display: flex;
+    gap: 10px;
+    background: var(--header-button);
+    border: none;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+nav button>span {
+    width: 30px;
+    height: 30px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    background: var(--header);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+
+nav button>img {
+    width: 10%;
+    filter: invert(1);
+}
