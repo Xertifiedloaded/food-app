@@ -39,12 +39,27 @@ section .hero {
         opacity: 0;
         transform: translateY(0);
     }
-    to{
+
+    to {
         opacity: 1;
-            transform: translateY(30px);
+        transform: translateY(30px);
     }
 }
 
 section .hero>h1 {
     font-size: 30px;
+}
+
+@media screen and (max-width:600px) {
+    section .hero {
+        left: 0;
+        right: 0;
+        width: 100%;
+        margin-top: 250px;
+        padding: 10px 5px;
+        box-sizing: border-box;
+    }
+        section .main>img{
+            transform: rotate(0);
+        }
 }
