@@ -3,7 +3,7 @@ import classes from './mainLayout.module.css'
 import Header from '../Ui/header'
 import { createContext, useState } from 'react'
 import { products } from '../constant'
-import { Location } from '../constant'
+import { LocationData } from '../constant'
 export const userContext = createContext()
 const MainLayout = () => {
     const [cartItems, setCartItems] = useState([])

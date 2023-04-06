@@ -36,7 +36,7 @@ export const products = [
         price: 1400
     },
 ]
-export const Location = [
+export const LocationData = [
     {
         location: "camp",
         price: 500

@@ -1,55 +1,60 @@
-import { useContext, useState } from 'react'
-import classes from './location.module.css'
-import { userContext } from '../../mainLayout/mainLayout'
+import { useContext, useState } from "react";
+import classes from "./location.module.css";
+import { userContext } from "../../mainLayout/mainLayout";
+import { LocationData } from "../../constant";
 
-const Location = () => {
-    const [clicked, setClicked] = useState(false)
-   
-    const {
-        Location,
-        toggle,
-        active,
-        setActive } = useContext(userContext)
-    return (
-        <>
+const Location = ({ defaultValue, setDefaultValue }) => {
+  const [clicked, setClicked] = useState(false);
 
-            <div className={classes.all}>
-                <div>
-                    <div className={classes.legend} onClick={toggle}>
-                        <span >
-                            location
-                        </span>
-                        <span>
-                          
-                        </span>
-                    </div>
-                    {
-                        active && (
-                            <div className={classes.main}>
-                                {
-                                    Location.map((items, idx) => (
-                                        <ClientLocation  toggle={toggle} {...items} key={idx} />
-                                    ))
-                                }
-                            </div>
-                        )
-                    }
-                </div>
+  const handleSelect = (data) => {
+    setDefaultValue(data.price);
 
+    console.log(defaultValue);
+  };
+
+  const { toggle, active, setActive } = useContext(userContext);
+  return (
+    <>
+      <div className={classes.all}>
+        <div>
+          <div className={classes.legend} onClick={toggle}>
+            <span>location</span>
+            <span>${defaultValue == "" ? "0" : defaultValue}</span>
+          </div>
+          {active && (
+            <div className={classes.main}>
+              {/* {Location.map((items, idx) => (
+                <ClientLocation
+                  handleSelect={() => handleSelect(items)}
+                  {...items}
+                  key={idx}
+                  // items={items}
+                />
+              ))} */}
+
+              <ClientLocation handleSelect={handleSelect} />
             </div>
-        </>
-    )
-}
-export default Location
-const ClientLocation = ({ price, location, toggle,  }) => {
-    return (
-        <>
+          )}
+        </div>
+      </div>
+    </>
+  );
+};
+export default Location;
 
-            <div className={classes.Items} onClick={toggle}>
-                <span>{location}</span>
-                <span>${price}</span>
-            </div>
-
-        </>
-    )
-}
+const ClientLocation = ({ handleSelect, item }) => {
+  return (
+    <>
+      {LocationData.map((item, i) => (
+        <div
+          className={classes.Items}
+          key={i}
+          onClick={() => handleSelect(item)}
+        >
+          <span>{item.location}</span>
+          <span>${item.price}</span>
+        </div>
+      ))}
+    </>
+  );
+};
