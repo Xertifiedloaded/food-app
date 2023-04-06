@@ -9,7 +9,7 @@ const Modal = ({}) => {
   const itemsPrice = cartItems.reduce((a, c) => a + c.price * c.qty, 0);
   const BankCharges = itemsPrice * 0.14;
   const Delivery = defaultValue;
-  const totalPrice = itemsPrice + Delivery + BankCharges;
+  const totalPrice = itemsPrice + BankCharges + Delivery;
   return (
     <>
       <div className={classes.main}>

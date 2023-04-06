@@ -8,30 +8,19 @@ const Location = ({ defaultValue, setDefaultValue }) => {
 
   const handleSelect = (data) => {
     setDefaultValue(data.price);
-
-    console.log(defaultValue);
   };
 
-  const { toggle, active, setActive } = useContext(userContext);
+  const { toggle, active } = useContext(userContext);
   return (
     <>
       <div className={classes.all}>
         <div>
           <div className={classes.legend} onClick={toggle}>
             <span>location</span>
-            <span>${defaultValue == "" ? "0" : defaultValue}</span>
+            <span>${defaultValue == "" ? 0 : defaultValue}</span>
           </div>
           {active && (
             <div className={classes.main}>
-              {/* {Location.map((items, idx) => (
-                <ClientLocation
-                  handleSelect={() => handleSelect(items)}
-                  {...items}
-                  key={idx}
-                  // items={items}
-                />
-              ))} */}
-
               <ClientLocation handleSelect={handleSelect} />
             </div>
           )}
@@ -42,7 +31,7 @@ const Location = ({ defaultValue, setDefaultValue }) => {
 };
 export default Location;
 
-const ClientLocation = ({ handleSelect, item }) => {
+const ClientLocation = ({ handleSelect }) => {
   return (
     <>
       {LocationData.map((item, i) => (
