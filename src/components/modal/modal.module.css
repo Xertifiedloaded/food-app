@@ -129,7 +129,25 @@
     padding: 5px 0;
 
 }
+.inputs{
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    justify-content: space-between;
+}
 
+.inputs>input{
+    height: 20px;
+    width: 40%;
+    padding: 10px;
+    outline: none;
+    border: 0.8px solid purple;
+    border-radius: 10px;
+}
+.inputs>input::placeholder{
+    text-transform: capitalize;
+}
 .totalPrice>.total {
     font-weight: 700;
     font-size: 1.5rem;

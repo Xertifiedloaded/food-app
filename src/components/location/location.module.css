@@ -31,10 +31,34 @@
     box-sizing: border-box;
     padding: 10px ;
     display: flex;
+    text-transform: capitalize;
     justify-content: space-between;
     margin-top: 5px;
     border-bottom: 1px solid black;
     /* border-radius: 10px; */
+}
+.inputs {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    justify-content: space-between;
+}
+
+.inputs>input {
+    height: 15px;
+    width: 40%;
+    padding: 10px;
+    outline: none;
+    text-transform: capitalize;
+    border: 0.8px solid purple;
+    border-radius: 10px;
+}
+.delContent{
+    font-weight: 200;
+}
+.inputs>input::placeholder {
+    text-transform: capitalize;
 }
 
 ::-webkit-scrollbar {
@@ -42,8 +66,6 @@
 }
 
 .legend {
-display: flex;
-justify-content: space-between;
    
     border-radius: 10px;
 
