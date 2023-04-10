@@ -2,10 +2,9 @@ import { useContext, useState } from "react";
 import classes from "./modal.module.css";
 import { userContext } from "../../mainLayout/mainLayout";
 import Location from "../location/location";
-const Modal = ({ items, key }) => {
+const Modal = ({ items}) => {
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
-
   const handleName = (e) => {
     setName(() => ({
       [e.target.name]: e.target.value,
@@ -20,15 +19,17 @@ const Modal = ({ items, key }) => {
     event.preventDefault();
     console.log(name);
     console.log(address);
+    const clientLocation = JSON.stringify(address).replace(/["{}]/g, " ");
+    const clientName = JSON.stringify(name).replace(/["{}]/g, " ");
+    const clietOrder = JSON.stringify(cartItems).replace(/["{}]:/g, "");
     const WhatsAppUrl =
       "https://wa.me/2348168043011?text=" +
-      `${defaultValue} + ${JSON.stringify(name)}+ "%0a" + ${JSON.stringify(address)} + ${JSON.stringify(cartItems)}` +
-      "%0a";
-    // console.log(cartItems);
-
+      clientLocation +
+      clientName +
+      `${items[0].price}`;
     return window.open(WhatsAppUrl);
+    console.log(items[0].price);
   };
-
   const [defaultValue, setDefaultValue] = useState("");
   const [initialLocation, setInitialLocation] = useState("");
   const { cartItems, AddToCart, removeFromCart, toggleModal } =
@@ -117,15 +118,15 @@ const Modal = ({ items, key }) => {
 };
 
 export default Modal;
-const ModalCart = ({ AddToCart, removeFromCart, items, key, price }) => {
+const ModalCart = ({ AddToCart, removeFromCart, items, key, qty }) => {
   return (
     <>
       <div key={key} className={classes.items}>
         <div className={classes.content}>
           <p className={classes.name}>{items.name}</p>
           <div className={classes.price}>
-            <p price={price}>${items.price}</p>
-            <p>x{items.qty}</p>
+            <p>${items?.price}</p>
+            <p>x{items?.qty}</p>
           </div>
         </div>
         <div className={classes.qty}>

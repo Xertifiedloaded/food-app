@@ -4,7 +4,7 @@ import { userContext } from '../../mainLayout/mainLayout'
 import Modal from '../modal/modal'
 
 const Card = () => {
-    const { products, modal, AddToCart } = useContext(userContext)
+    const { products, modal, AddToCart,cartItems} = useContext(userContext)
     return (
         <>
             <div className={classes.main}>
@@ -19,7 +19,7 @@ const Card = () => {
                 </ul>
                 <div className={classes.modal}>
                     {
-                        modal ? <Modal />: null
+                        modal ? <Modal items={cartItems} />: null
 
 
                     }

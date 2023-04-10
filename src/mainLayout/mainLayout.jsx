@@ -7,6 +7,7 @@ import { LocationData } from '../constant'
 export const userContext = createContext()
 const MainLayout = () => {
     const [cartItems, setCartItems] = useState([])
+    
     const [modal, setModal,] = useState(false)
     const [active, setActive] = useState(false)
     const toggle = () => {
